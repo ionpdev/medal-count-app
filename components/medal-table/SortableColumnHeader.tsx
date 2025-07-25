@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
+import { SortType, SortDirection } from "@/lib/utils"
 
 interface SortableColumnHeaderProps {
   title: string
   sortKey: string
-  currentSort?: string
+  currentSort?: SortType
+  sortDirection?: SortDirection
   onSort?: (sortKey: string) => void
 }
 
@@ -11,6 +13,7 @@ export function SortableColumnHeader({
   title,
   sortKey,
   currentSort,
+  sortDirection,
   onSort,
 }: SortableColumnHeaderProps) {
   const isActive = currentSort === sortKey
@@ -27,7 +30,9 @@ export function SortableColumnHeader({
     >
       {title}
       {isActive && (
-        <span className="ml-2 text-blue-600 dark:text-blue-400">↓</span>
+        <span className="ml-2 text-blue-600 dark:text-blue-400">
+          {sortDirection === "asc" ? "↑" : "↓"}
+        </span>
       )}
     </Button>
   )

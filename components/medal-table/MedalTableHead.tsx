@@ -1,12 +1,18 @@
 import { TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { SortableColumnHeader } from "./SortableColumnHeader"
+import { SortType, SortDirection } from "@/lib/utils"
 
 interface MedalTableHeadProps {
-  currentSort?: string
+  currentSort?: SortType
+  sortDirection?: SortDirection
   onSort?: (sortKey: string) => void
 }
 
-export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
+export function MedalTableHead({
+  currentSort,
+  sortDirection,
+  onSort,
+}: MedalTableHeadProps) {
   return (
     <TableHeader>
       <TableRow className="border-b-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50">
@@ -21,6 +27,7 @@ export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
             title="🥇 Gold"
             sortKey="gold"
             currentSort={currentSort}
+            sortDirection={sortDirection}
             onSort={onSort}
           />
         </TableHead>
@@ -29,6 +36,7 @@ export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
             title="🥈 Silver"
             sortKey="silver"
             currentSort={currentSort}
+            sortDirection={sortDirection}
             onSort={onSort}
           />
         </TableHead>
@@ -37,6 +45,7 @@ export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
             title="🥉 Bronze"
             sortKey="bronze"
             currentSort={currentSort}
+            sortDirection={sortDirection}
             onSort={onSort}
           />
         </TableHead>
@@ -45,6 +54,7 @@ export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
             title="🏆 Total"
             sortKey="total"
             currentSort={currentSort}
+            sortDirection={sortDirection}
             onSort={onSort}
           />
         </TableHead>

@@ -1,19 +1,11 @@
 import { useState, useEffect } from "react"
+import { MedalData } from "./utils"
 
 export interface RawMedalData {
   code: string
   gold: number
   silver: number
   bronze: number
-}
-
-export interface MedalData {
-  code: string
-  country: string
-  gold: number
-  silver: number
-  bronze: number
-  total: number
 }
 
 const getCountryName = (code: string): string => {
