@@ -24,9 +24,9 @@ export function CountryCell({ countryCode, countryName }: CountryCellProps) {
   }
 
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-xl">{getFlagEmoji(countryCode)}</span>
-      <span className="font-medium">{countryName}</span>
+    <div className="flex items-center gap-3 min-w-[200px]">
+      <span className="text-2xl">{getFlagEmoji(countryCode)}</span>
+      <span className="font-semibold text-foreground">{countryName}</span>
     </div>
   )
 }

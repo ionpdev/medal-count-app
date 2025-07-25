@@ -20,17 +20,22 @@ interface MedalTableProps {
 
 export function MedalTable({ data, currentSort, onSort }: MedalTableProps) {
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">
+    <Card className="w-full shadow-lg border-0 bg-card">
+      <CardHeader className="pb-4">
+        <CardTitle className="text-3xl font-bold text-center bg-gradient-to-r from-yellow-600 via-gray-500 to-amber-600 bg-clip-text text-transparent">
           🏅 Olympic Medal Count
         </CardTitle>
+        <p className="text-center text-muted-foreground">
+          Top countries by medal performance
+        </p>
       </CardHeader>
-      <CardContent>
-        <Table>
-          <MedalTableHead currentSort={currentSort} onSort={onSort} />
-          <MedalTableBody data={data} />
-        </Table>
+      <CardContent className="pt-0">
+        <div className="rounded-lg border">
+          <Table>
+            <MedalTableHead currentSort={currentSort} onSort={onSort} />
+            <MedalTableBody data={data} />
+          </Table>
+        </div>
       </CardContent>
     </Card>
   )

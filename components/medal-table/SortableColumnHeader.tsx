@@ -18,11 +18,13 @@ export function SortableColumnHeader({
   return (
     <Button
       variant="ghost"
-      className={`font-semibold ${isActive ? "bg-accent" : ""}`}
+      className={`font-semibold hover:bg-accent/50 transition-colors ${
+        isActive ? "bg-accent text-accent-foreground" : ""
+      }`}
       onClick={() => onSort?.(sortKey)}
     >
       {title}
-      {isActive && <span className="ml-1">↓</span>}
+      {isActive && <span className="ml-2 text-primary">↓</span>}
     </Button>
   )
 }

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { MedalTable } from "./MedalTable"
 
+// Static data for testing
 const mockData = [
   {
     code: "USA",
@@ -35,17 +36,28 @@ export function MedalTableContainer() {
 
   const handleSort = (sortKey: string) => {
     setCurrentSort(sortKey)
-
+    // TODO: Implement actual sorting logic
     console.log("Sorting by:", sortKey)
   }
 
   return (
-    <div className="container mx-auto py-8 px-4">
-      <MedalTable
-        data={mockData}
-        currentSort={currentSort}
-        onSort={handleSort}
-      />
+    <div className="container mx-auto py-8 px-4 max-w-4xl">
+      <div className="space-y-6">
+        <div className="text-center space-y-2">
+          <h1 className="text-4xl font-bold tracking-tight">
+            Medal Count Dashboard
+          </h1>
+          <p className="text-lg text-muted-foreground">
+            Track Olympic performance by country
+          </p>
+        </div>
+
+        <MedalTable
+          data={mockData}
+          currentSort={currentSort}
+          onSort={handleSort}
+        />
+      </div>
     </div>
   )
 }

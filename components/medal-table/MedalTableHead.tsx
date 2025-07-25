@@ -9,12 +9,12 @@ interface MedalTableHeadProps {
 export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
   return (
     <TableHeader>
-      <TableRow>
-        <TableHead className="text-center w-12">Rank</TableHead>
-        <TableHead>Country</TableHead>
+      <TableRow className="border-b-2">
+        <TableHead className="text-center w-16 font-bold">Rank</TableHead>
+        <TableHead className="font-bold min-w-[200px]">Country</TableHead>
         <TableHead className="text-center">
           <SortableColumnHeader
-            title="Gold"
+            title="🥇 Gold"
             sortKey="gold"
             currentSort={currentSort}
             onSort={onSort}
@@ -22,7 +22,7 @@ export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
         </TableHead>
         <TableHead className="text-center">
           <SortableColumnHeader
-            title="Silver"
+            title="🥈 Silver"
             sortKey="silver"
             currentSort={currentSort}
             onSort={onSort}
@@ -30,7 +30,7 @@ export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
         </TableHead>
         <TableHead className="text-center">
           <SortableColumnHeader
-            title="Bronze"
+            title="🥉 Bronze"
             sortKey="bronze"
             currentSort={currentSort}
             onSort={onSort}
@@ -38,7 +38,7 @@ export function MedalTableHead({ currentSort, onSort }: MedalTableHeadProps) {
         </TableHead>
         <TableHead className="text-center">
           <SortableColumnHeader
-            title="Total"
+            title="🏆 Total"
             sortKey="total"
             currentSort={currentSort}
             onSort={onSort}
