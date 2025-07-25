@@ -18,15 +18,28 @@ interface MedalRowProps {
 
 export function MedalRow({ data, rank }: MedalRowProps) {
   const getRankStyle = (rank: number) => {
-    if (rank === 1) return "text-yellow-600 font-bold text-lg"
-    if (rank === 2) return "text-gray-500 font-bold text-lg"
-    if (rank === 3) return "text-amber-600 font-bold text-lg"
-    return "font-medium"
+    if (rank === 1)
+      return "text-yellow-700 font-bold text-lg bg-yellow-50 dark:bg-yellow-950/20"
+    if (rank === 2)
+      return "text-gray-600 font-bold text-lg bg-gray-50 dark:bg-gray-950/20"
+    if (rank === 3)
+      return "text-amber-700 font-bold text-lg bg-amber-50 dark:bg-amber-950/20"
+    return "font-medium text-gray-600 dark:text-gray-400"
+  }
+
+  const getRowStyle = (rank: number) => {
+    if (rank <= 3)
+      return "bg-gradient-to-r from-transparent to-gray-50/50 dark:to-gray-900/50"
+    return ""
   }
 
   return (
-    <TableRow className="hover:bg-muted/50 transition-colors">
-      <TableCell className={`text-center w-16 ${getRankStyle(rank)}`}>
+    <TableRow
+      className={`hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-all border-b border-gray-100 dark:border-gray-800 ${getRowStyle(
+        rank
+      )}`}
+    >
+      <TableCell className={`text-center w-16 py-4 ${getRankStyle(rank)}`}>
         {rank}
       </TableCell>
       <TableCell className="py-4">

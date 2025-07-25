@@ -20,13 +20,13 @@ export function MedalCell({ count, type }: MedalCellProps) {
   const getTextColor = () => {
     switch (type) {
       case "gold":
-        return "text-yellow-600"
+        return "text-yellow-700 dark:text-yellow-400"
       case "silver":
-        return "text-gray-500"
+        return "text-gray-600 dark:text-gray-400"
       case "bronze":
-        return "text-amber-600"
+        return "text-amber-700 dark:text-amber-400"
       case "total":
-        return "text-primary font-bold text-lg"
+        return "text-blue-700 dark:text-blue-400 font-bold text-lg"
       default:
         return ""
     }
