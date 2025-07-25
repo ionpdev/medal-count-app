@@ -20,22 +20,5 @@ npm install
 
 ```bash
 npm run dev
-```
-
-3. **App Routes**
-
-```bash
-Main Application: http://localhost:3000
-```
-
-4. **Running Tests**
-
-```bash
-npm run test
-```
-
-5. **Running Coverage**
-
-```bash
-npm run coverage
+http://localhost:3000
 ```
