@@ -12,7 +12,7 @@ To run the app locally:
 
 ```bash
 git clone
-cd medal-count
+cd medal-count-app
 npm install
 ```
 
@@ -39,4 +39,3 @@ npm run test
 ```bash
 npm run coverage
 ```
-# medal-count-app
