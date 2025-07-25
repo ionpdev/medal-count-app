@@ -1,7 +1,11 @@
-"use client"
+import { MedalTableContainer } from "@/components/medal-table"
 
 const MainPage = () => {
-  return <div className="max-w-5xl mx-auto px-4 py-8">Medal Count App</div>
+  return (
+    <div className="min-h-screen bg-background">
+      <MedalTableContainer />
+    </div>
+  )
 }
 
 export default MainPage
