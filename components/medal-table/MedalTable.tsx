@@ -16,9 +16,15 @@ interface MedalTableProps {
   data: MedalData[]
   currentSort?: string
   onSort?: (sortKey: string) => void
+  isLoading?: boolean
 }
 
-export function MedalTable({ data, currentSort, onSort }: MedalTableProps) {
+export function MedalTable({
+  data,
+  currentSort,
+  onSort,
+  isLoading = false,
+}: MedalTableProps) {
   return (
     <Card className="w-full shadow-sm border bg-white dark:bg-card">
       <CardHeader className="pb-6 border-b bg-gradient-to-r from-blue-50 to-red-50 dark:from-blue-950/20 dark:to-red-950/20">
@@ -33,7 +39,7 @@ export function MedalTable({ data, currentSort, onSort }: MedalTableProps) {
         <div className="overflow-hidden">
           <Table>
             <MedalTableHead currentSort={currentSort} onSort={onSort} />
-            <MedalTableBody data={data} />
+            <MedalTableBody data={data} isLoading={isLoading} />
           </Table>
         </div>
       </CardContent>

@@ -1,5 +1,6 @@
 import { TableBody } from "@/components/ui/table"
 import { MedalRow } from "./MedalRow"
+import { MedalTableSkeleton } from "./MedalTableSkeleton"
 
 interface MedalData {
   code: string
@@ -12,14 +13,22 @@ interface MedalData {
 
 interface MedalTableBodyProps {
   data: MedalData[]
+  isLoading?: boolean
 }
 
-export function MedalTableBody({ data }: MedalTableBodyProps) {
+export function MedalTableBody({
+  data,
+  isLoading = false,
+}: MedalTableBodyProps) {
   return (
     <TableBody>
-      {data.map((medal, index) => (
-        <MedalRow key={medal.code} data={medal} rank={index + 1} />
-      ))}
+      {isLoading ? (
+        <MedalTableSkeleton rows={5} />
+      ) : (
+        data.map((medal, index) => (
+          <MedalRow key={medal.code} data={medal} rank={index + 1} />
+        ))
+      )}
     </TableBody>
   )
 }
