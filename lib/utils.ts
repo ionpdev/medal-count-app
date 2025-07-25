@@ -54,7 +54,6 @@ export const sortMedals = (
   })
 }
 
-// Get top 10 countries
 export const getTopCountries = (
   data: MedalData[],
   count: number = 10
@@ -62,15 +61,42 @@ export const getTopCountries = (
   return data.slice(0, count)
 }
 
-// Toggle sort direction
 export const toggleSortDirection = (
   currentDirection: SortDirection
 ): SortDirection => {
   return currentDirection === "desc" ? "asc" : "desc"
 }
 
-// Get default sort configuration
 export const getDefaultSort = (): SortConfig => ({
   key: "gold",
   direction: "desc",
 })
+
+export const getFlagSpritePosition = (countryCode: string): string => {
+  // (28x221px countries sprite)
+  const alphabeticalCodes = [
+    "AUT",
+    "BLR",
+    "CAN",
+    "CHN",
+    "FRA",
+    "GER",
+    "ITA",
+    "NED",
+    "NOR",
+    "RUS",
+    "SUI",
+    "SWE",
+    "USA",
+  ]
+
+  const index = alphabeticalCodes.indexOf(countryCode)
+
+  if (index === -1) {
+    return "0 0"
+  }
+
+  // each flag is 17px tall
+  const yOffset = index * 17
+  return `0 -${yOffset}px`
+}
